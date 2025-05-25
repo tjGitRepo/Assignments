@@ -1,7 +1,5 @@
 package assignmments;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class Assignment1_DataTypes {
 
@@ -94,18 +92,6 @@ public class Assignment1_DataTypes {
 		//20 Printing String using 'System.out.println'
 				float dist = 200.5f;
 				System.out.printf("20. Distance between two cities: "+ dist );		
-		
-		
-		
-			
-			 
-			
-			 	 
-				
-			
-			
-	
-		
 		
 		
 		
