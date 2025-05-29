@@ -29,7 +29,7 @@ public class Assignment5_Collections_SetsMaps {
 				 * 				 				
 				*/
 				
-				System.out.println("========= 1. StudentDetails table data ========== ");
+				System.out.println("========= 1. Storing StudentDetails table data ========== ");
 				
 				//Row1 -Mapping
 				Map<String,String> s1map = new LinkedHashMap<String,String>();
@@ -85,11 +85,11 @@ public class Assignment5_Collections_SetsMaps {
 					s.add(s3map);
 				
 				// Printing row wise using 
-				System.out.println("Row1 is : "+ s.get(0));
-				System.out.println("Row2 is : "+ s.get(1));
-				System.out.println("Row3 is : "+ s.get(2)+"\n");
-				
+					//System.out.println("Row1 is : "+ s.get(0));
+					//System.out.println("Row2 is : "+ s.get(1));
+					//System.out.println("Row3 is : "+ s.get(2)+"\n");
 					
+						
 		
 
 		
@@ -103,7 +103,7 @@ public class Assignment5_Collections_SetsMaps {
 				 * 				 				
 				*/
 				
-				System.out.println("========= 2. EmployeeDetails table data ========== ");
+				System.out.println("========= 2. Storing EmployeeDetails table data ========== ");
 				
 				//Row1 -Mapping
 				Map<String,String> e1map = new LinkedHashMap<String,String>();
@@ -156,9 +156,9 @@ public class Assignment5_Collections_SetsMaps {
 					e.add(e3map);
 				
 				// Printing row wise using 
-				System.out.println("Row1 is : "+ e.get(0));
-				System.out.println("Row2 is : "+ e.get(1));
-				System.out.println("Row3 is : "+ e.get(2)+"\n");
+					//System.out.println("Row1 is : "+ e.get(0));
+					//System.out.println("Row2 is : "+ e.get(1));
+					//System.out.println("Row3 is : "+ e.get(2)+"\n");
 				
 					
 				
@@ -173,7 +173,7 @@ public class Assignment5_Collections_SetsMaps {
 				 * 				 				
 				*/
 				
-				System.out.println("========= 3. Products table data ========== ");
+				System.out.println("========= 3. Storing Products table data ========== ");
 				
 				//Row1 -Mapping
 				Map<String,String> p1map = new LinkedHashMap<String,String>();
@@ -188,7 +188,7 @@ public class Assignment5_Collections_SetsMaps {
 				p1map.put("Manufacturing Date", "Aug 2023");
 				p1map.put("Expiry Date", "Aug 2028");
 				
-				System.out.println("Row1 is: "+ p1map);
+				//System.out.println("Row1 is: "+ p1map);
 				
 				//Row2 -Mapping
 				Map<String,String> p2map = new LinkedHashMap<String,String>();
@@ -203,7 +203,7 @@ public class Assignment5_Collections_SetsMaps {
 				p2map.put("Manufacturing Date", "Sep 2024");
 				p2map.put("Expiry Date", "N/A");
 				
-				System.out.println("Row2 is: "+ p2map);
+				//System.out.println("Row2 is: "+ p2map);
 				
 				//Row3 -Mapping
 				Map<String,String> p3map = new LinkedHashMap<String,String>();
@@ -218,7 +218,7 @@ public class Assignment5_Collections_SetsMaps {
 				p3map.put("Manufacturing Date", "Jan 2027");
 				p3map.put("Expiry Date", "N/A");
 				
-				System.out.println("Row3 is: "+ p3map);
+				//System.out.println("Row3 is: "+ p3map);
 				
 				//ArrayList to add above rows which were loaded in the form of 3 separate hashMap variables.
 				
@@ -228,12 +228,27 @@ public class Assignment5_Collections_SetsMaps {
 					p.add(p2map);
 					p.add(p3map);
 				
-				// Our Desired Output cell present at > Row2 , F Column (ie..Key= Supplier) )
-				System.out.println("\n"+"Supplier name for Product#002 is : "+ p.get(1).get("Supplier"));	
+					// Our Desired Output cell present at > Row2 , F Column (ie..Key= Supplier) )
+						//System.out.println("\n"+"Supplier name for Product#002 is : "+ p.get(1).get("Supplier"));	
 				
 					
-		
-		
+				
+		/**Now we have all three table data as 3 different ArrayLists
+		 * 
+		 * We will now store those 3 ArrayLists into single LinkedHashMap just to give them key names.
+		 * So that in future we can call them just by remebering those Key names, (Excel tab names here)
+		 *  
+		 */
+				Map < String, List<Map<String, String>> > excelTabName = new LinkedHashMap<> ();
+		 
+				excelTabName.put("StudentDetails", s);
+				excelTabName.put("EmployeeDetails", e);
+				excelTabName.put("ProductDetails", p);
+				
+				System.out.println("\n"+"All rows inside ProductDetails tab: "+excelTabName.get("ProductDetails"));
+				System.out.println("\n"+"Supplier name for Product#002 is i.e.. in row#2 : "+excelTabName.get("ProductDetails").get(1).get("Supplier"));
+				
+					
 	}
 
 }
