@@ -35,9 +35,9 @@ public class Assignment7_ConditionalStatements {
 	//Given
 			String customerName = "John Doe";
 			int creditScore = 720;
-			double income = 55000.0;
-			boolean isEmployed = true;
-			double debtToIncomeRatio = 35.0;
+			double income = 35000.0;
+			boolean isEmployed = false;
+			double debtToIncomeRatio = 41.0;
 	
 	//Logic start
 	public void ApplicationProcessing() 
@@ -51,14 +51,8 @@ public class Assignment7_ConditionalStatements {
 						System.out.println("Loan Approved!");
 						ApplicantDetails();
 					}
-					else if (creditScore < 650 ||isEmployed == false || debtToIncomeRatio >= 40 || income < 50000  ) {
-						
-						System.out.println("Loan is Denied!, as your profile is falling under any of below: \ncreditScore<650 / Unemployed / debtToIncomeRatio>=40% / income<50000 ");
-						ApplicantDetails();
-						
-					}
 								
-					else if( creditScore >=650 && creditScore <=750 ) 
+					else if( creditScore >=650 && creditScore <=750 && debtToIncomeRatio <= 40 && income > 50000 ) 
 					{
 						
 							System.out.println("Credit score in between 650-750, \n Hence additional checks being performed: Checking if income >= 50000 and Employment status is true");
@@ -70,10 +64,41 @@ public class Assignment7_ConditionalStatements {
 												System.out.println("Loan Approved!");
 												
 											}
-								else 		{
-												System.out.println("Loan is Denied! Details below:");
-												ApplicantDetails();						
-											}
+								else 	{
+												
+									System.err.println("Loan is Denied! Details below:");
+											
+												if (isEmployed == false) {
+													System.err.println("Reason(s): Employment status is false for customer");
+												}
+										
+												if (income < 50000) {
+													System.err.println("Reason(s): Customer income is less than 50000");
+										
+												}
+												ApplicantDetails();	
+								            }
+					}
+					else if (creditScore < 650 ||isEmployed == false || debtToIncomeRatio >= 40 || income < 50000  )
+					{
+						
+						System.err.println("Loan Denied!, ");
+						
+							if (creditScore < 650) {
+								System.err.println("Reason(s): creditScore is less than 650");
+							}
+							
+							if (isEmployed == false) {
+								System.err.println("Reason(s): Employment status is false for customer");
+							}
+							if (debtToIncomeRatio >= 40) {
+								System.err.println("Reason(s): debtToIncomeRatio is greater than 40%");
+							}
+							if (income < 50000) {
+								System.err.println("Reason(s): Customer income is less than 50000");
+							}
+						ApplicantDetails();
+						
 					}
 		
 		
@@ -83,7 +108,7 @@ public class Assignment7_ConditionalStatements {
 	public void ApplicantDetails()
 		{
 		
-		System.out.println("==========\nYour creditScore is: " +creditScore+"\n"
+		System.out.println("\n========== Application details below ==========\nYour creditScore is: " +creditScore+"\n"
 				+"Your employment status is: " + isEmployed+"\n"
 				+"Your debtToIncomeRatio is: " + debtToIncomeRatio+"%"+"\n"
 				+"Your income is: " + income+"\n==========");
