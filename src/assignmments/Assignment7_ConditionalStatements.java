@@ -35,8 +35,8 @@ public class Assignment7_ConditionalStatements {
 	//Given
 			String customerName = "John Doe";
 			int creditScore = 720;
-			double income = 35000.0;
-			boolean isEmployed = false;
+			double income = 55000.0;
+			boolean isEmployed = true;
 			double debtToIncomeRatio = 41.0;
 	
 	//Logic start
